@@ -1,0 +1,8 @@
+# Python env
+venv/
+
+# VS Code config
+.vscode/
+
+# Jupyter checkpoints
+**/.ipynb_checkpoints/

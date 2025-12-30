@@ -164,7 +164,6 @@ For further discussion or access to the live report:
 **Samuel Head**
 Data & Business Analytics
 GitHub: ImEyePatch
-Portfolio site: *planned*
 
 ---
 

@@ -1,0 +1,7 @@
+trailer_type,carrier_type,endpoint_type,avg_without_fuel,avg_with_fuel,fuel_surcharge,fuel_surcharge_pct,count_with_fuel,count_without_fuel,sample_size
+Van,Broker,buy,2.13,2.56,0.44,20.6,100,100,100
+Van,Asset,sell,2.13,2.55,0.42,19.8,100,100,100
+Flatbed,Broker,buy,2.18,2.6,0.42,19.4,100,100,100
+Flatbed,Asset,sell,2.18,2.55,0.38,17.4,100,100,100
+Reefer,Broker,buy,2.53,2.96,0.43,16.9,100,100,100
+Reefer,Asset,sell,1.86,2.21,0.35,18.7,100,100,100

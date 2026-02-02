@@ -1,0 +1,13 @@
+equipment,geography,fuel_included,count
+flatbeds,region,False,283
+flatbeds,region,True,283
+flatbeds,state,False,1625
+flatbeds,state,True,1625
+reefers,region,False,288
+reefers,region,True,288
+reefers,state,False,1728
+reefers,state,True,1728
+vans,region,False,300
+vans,region,True,300
+vans,state,False,2301
+vans,state,True,2301

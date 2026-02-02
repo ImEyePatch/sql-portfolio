@@ -1,0 +1,6 @@
+total_records: 360
+unique_origins: 25
+unique_destinations: 25
+unique_lanes: 95
+avg_orders: 23.85
+avg_rate: 2.944611111111111

@@ -1,0 +1,26 @@
+zip3,city,state,region
+021,Boston,MA,Northeast
+100,New York,NY,Northeast
+191,Philadelphia,PA,Northeast
+212,New York,NY,Northeast
+282,Charlotte,NC,Southeast
+303,Denver,CO,Mountain
+331,Miami,FL,Southeast
+336,Greensboro,NC,Southeast
+372,Nashville,TN,Southeast
+381,Memphis,TN,Southeast
+432,Columbus,OH,Midwest
+441,Cleveland,OH,Midwest
+462,Indianapolis,IN,Midwest
+482,Detroit,MI,Midwest
+554,Minneapolis,MN,Midwest
+606,Chicago,IL,Midwest
+641,Kansas City,MO,Midwest
+750,Dallas,TX,South
+770,Atlanta,GA,Southeast
+802,Burlington,VT,Northeast
+850,Phoenix,AZ,West
+900,Los Angeles,CA,West
+941,San Francisco,CA,West
+972,Dallas,TX,South
+981,Seattle,WA,West

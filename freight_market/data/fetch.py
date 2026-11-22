@@ -6,11 +6,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from collections import deque
 
-# Supply API keys via the environment. Never commit keys or put them in notebooks.
-# Example: MPACT_API_KEYS="key_one,key_two" python freight_market/data/fetch.py
-API_KEYS = [key.strip() for key in os.getenv("MPACT_API_KEYS", "").split(",") if key.strip()]
+# Example only: MPACT_API_KEYS="EXAMPLE_KEY_1,EXAMPLE_KEY_2"
+# Provide actual credentials locally through the MPACT_API_KEYS environment variable.
+API_KEYS = [k.strip() for k in os.getenv("MPACT_API_KEYS", "").split(",") if k.strip()]
 if not API_KEYS:
-    raise RuntimeError("MPACT_API_KEYS must contain at least one API key (comma-separated).")
+    raise RuntimeError("Set MPACT_API_KEYS to valid API credentials before running.")
 
 BASE_URL = "https://api.mcleodsoftware.com/mpact-sandbox/rates"
 

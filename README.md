@@ -1,140 +1,59 @@
-# SQL Portfolio
+# SAMUEL HEAD // DATA & BI SYSTEMS
 
-## About Me
+```text
++-----------------------------------------------------------------------+
+|  S A M U E L   H E A D                              PORTFOLIO / 2026 |
+|-----------------------------------------------------------------------|
+|  SQL  ::  POWER BI  ::  DAX  ::  POWER QUERY  ::  PYTHON              |
+|  DOMAIN   TRANSPORTATION, OPERATIONAL REPORTING, DATA QUALITY         |
+|  METHOD   MODEL -> VALIDATE -> EXPLAIN -> AUTOMATE                     |
++-----------------------------------------------------------------------+
+```
 
-My name is Samuel Head, and I am actively working toward a career in Data Analytics. This repository represents my ongoing journey as I continue building practical skills in SQL, data modeling, data cleaning, exploratory analysis, and dashboard development.
+I build data solutions where operations, business rules, and reporting meet. My work spans SQL analysis, Power BI semantic models, Power Query transformations, data validation, workflow automation, and logistics reporting.
 
-I am committed to learning every day. Each project in this repository reflects not only technical growth, but also improvements in how I think about data problems, structure analysis, and communicate insights. My goal is to develop into a data professional who can move from raw datasets to clear, actionable conclusions with confidence and efficiency.
+## SELECTED WORK
 
----
+| Project | What it demonstrates | Status |
+| :-- | :-- | :-- |
+| [Retail Superstore](retail_superstore/README.md) | Exploratory analysis, profitability diagnostics, Power BI, DAX | Complete portfolio case study |
+| [Freight Market](freight_market/) | API ingestion, Python data preparation, freight lane and fuel analysis | Work in progress |
+| [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi) | SQL serving patterns, telematics normalization, Power Query performance and testing | Public-safe reconstruction |
+| USPS Service Reconciliation | Event matching, compliance scoring, exemption scenarios and lane performance | Internal case study; documentation only pending review |
+| Carrier Non-Compliance Analytics | Geofence and ping-frequency exception analysis, carrier/lane drilldowns | Internal case study; documentation only pending review |
+| FourKites Archive Automation | Email-triggered attachment processing, date-based SharePoint archives | Internal case study; documentation only pending review |
 
-## Purpose of This Repository
+## TECHNICAL APPROACH
 
-This repository serves as:
+- **Data:** SQL querying, relational modeling, cleaning, explicit data grain and data-quality checks
+- **Business intelligence:** Power BI, DAX, Power Query M, dashboards and operational metrics
+- **Automation:** Python scripts, REST APIs, Power Automate and data ingestion
+- **Engineering:** migration validation, source reconciliation, diagnostics, reproducibility and documentation
 
-- A collection of structured SQL-based data analysis projects  
-- A demonstration of end-to-end data workflows  
-- A space to document learning progress and iterative improvement  
-- A professional portfolio for hiring managers and collaborators  
+## WHAT TO REVIEW FIRST
 
-Projects are organized by dataset and business problem, with separate folders and documentation for each analysis.
+**For SQL / analysis roles:** [Retail Superstore](retail_superstore/README.md) and [Freight Market](freight_market/).
 
----
+**For BI / data engineering roles:** [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi), including its [performance benchmarks](https://github.com/ImEyePatch/trailer-tracking-powerbi/tree/main/benchmarks) and [architecture documentation](https://github.com/ImEyePatch/trailer-tracking-powerbi/tree/main/docs).
 
-## Current Projects
+## ENGINEERING PRINCIPLES
 
-### Retail Superstore Analysis (Complete)
+```text
+[01] DEFINE THE QUESTION     -> Who needs the answer, and why?
+[02] VERIFY THE GRAIN        -> What is one row?
+[03] RECONCILE SOURCES       -> Which records should match?
+[04] TEST THE LOGIC          -> Where can metrics silently fail?
+[05] EXPLAIN THE RESULT      -> Can another analyst maintain it?
+```
 
-This project analyzes a retail superstore dataset using SQL for querying and transformation, followed by analysis and visualization. It focuses on:
+## PUBLICATION & DATA POLICY
 
-- Revenue and profitability breakdowns  
-- Customer segmentation  
-- Product performance  
-- Business insight generation  
+Workplace project descriptions are high-level portfolio case studies, **not production source releases**. Employer datasets, internal paths, business identifiers, credentials, telemetry and proprietary measures are not reproduced publicly. Synthetic examples must be labeled as such.
 
-The project is complete and includes dashboards and structured queries. See the project folder for detailed documentation.
-
-### Freight Rate Market Analysis (Work in Progress)
-
-This project analyzes freight market data, including fuel, ZIP mapping, and load trends. It is currently under development and being expanded with additional structured insights and modeling.
-
-A dedicated README will outline the full scope once finalized.
-
----
-
-## Technical Approach
-
-Across projects, I focus on:
-
-- Writing clean, readable SQL  
-- Creating reproducible data workflows  
-- Structuring queries logically and modularly  
-- Building summary tables and aggregations  
-- Translating raw outputs into business insights  
-
-I aim to approach analysis the way it would be done in a professional environment: with clarity, organization, and performance in mind.
+For operational projects, the documented scope and contributions should be distinguished from work that is still planned, under review, or not independently validated.
 
 ---
 
-## Tools and Workflow
+[GitHub profile](https://github.com/ImEyePatch) · [Portfolio repository](https://github.com/ImEyePatch/sql-portfolio)
 
-I actively leverage modern tooling to increase both efficiency and depth of analysis.
-
-### Core Tools
-
-- SQL (SQLite, structured query development)
-- Python (data preparation and transformation)
-- Jupyter Notebooks
-- Power BI
-- VS Code
-
-### AI-Assisted Development
-
-I strategically use tools such as:
-
-- ChatGPT Pro
-- DeepSeek API
-- Continue extension in VS Code
-
-These tools assist me with:
-
-- Planning structured analysis approaches  
-- Reviewing and validating SQL logic  
-- Debugging queries and scripts  
-- Generating quick exploratory summaries  
-- Building small automation scripts to aggregate and clean data  
-
-Rather than replacing understanding, these tools allow me to:
-
-- Reduce time spent on repetitive or mechanical tasks  
-- Focus more deeply on analytical reasoning  
-- Iterate faster  
-- Stress-test my logic and assumptions  
-
-I treat AI as a collaborative assistant for validation and acceleration, not a shortcut for learning. Every project reflects hands-on work and active problem solving.
-
----
-
-## Repository Structure
-
-The repository is organized by project and functional components, including:
-
-- `data/` – raw and cleaned datasets  
-- `notebooks/` – exploratory and structured analysis notebooks  
-- `sql/` – database loading and query scripts  
-- `dashboards/` – exported dashboard visuals  
-- Project-specific folders (e.g., `freight_market`, `retail_superstore`)  
-
-Each major project contains its own files and will include dedicated documentation explaining objectives, methodology, and findings.
-
----
-
-## Professional Goals
-
-My long-term objective is to build a career in data analytics where I can:
-
-- Translate messy data into structured insight  
-- Support business decisions with evidence  
-- Identify patterns and opportunities  
-- Continuously refine processes for efficiency  
-
-I am particularly interested in roles involving:
-
-- Business Intelligence  
-- Operations Analytics  
-- Market Analysis  
-- Data Strategy  
-
-This portfolio will continue to evolve as I deepen my technical skills and expand into more advanced topics such as data modeling, automation pipelines, and performance optimization.
-
----
-
-## Ongoing Development
-
-The Freight Market Analysis project is still under active development, and additional projects will be added over time.
-
-As I continue learning, I expect this repository to grow not only in volume, but in technical sophistication and analytical depth.
-
----
-
-If you are reviewing this repository as a hiring manager or collaborator, thank you for taking the time to explore my work.
+*This repository is actively maintained. See individual projects for methodology, caveats and reproducibility.*

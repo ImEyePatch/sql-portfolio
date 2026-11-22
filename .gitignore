@@ -1,0 +1,14 @@
+# Keep local environments and credentials out of Git
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+*.log

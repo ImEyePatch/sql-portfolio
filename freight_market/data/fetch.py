@@ -1,3 +1,4 @@
+import os
 import requests
 import pandas as pd
 import time
@@ -5,10 +6,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from collections import deque
 
-API_KEYS = [
-    "eyJvcmciOiI2MmY2YTYxZDgyODM5ZjAwMDE4NmExY2EiLCJpZCI6IjRhYWZkNTY3NTA5YjRlOGU5OWJjZDVmMmQ0MGYyOTJiIiwiaCI6Im11cm11cjEyOCJ9",
-    "eyJvcmciOiI2MmY2YTYxZDgyODM5ZjAwMDE4NmExY2EiLCJpZCI6IjJiZGViYTFhZmE5ZjRjMzdhMzQzMTkyNzE5MzhlNjQ3IiwiaCI6Im11cm11cjEyOCJ9",
-]
+# Supply API keys via the environment. Never commit keys or put them in notebooks.
+# Example: MPACT_API_KEYS="key_one,key_two" python freight_market/data/fetch.py
+API_KEYS = [key.strip() for key in os.getenv("MPACT_API_KEYS", "").split(",") if key.strip()]
+if not API_KEYS:
+    raise RuntimeError("MPACT_API_KEYS must contain at least one API key (comma-separated).")
 
 BASE_URL = "https://api.mcleodsoftware.com/mpact-sandbox/rates"
 

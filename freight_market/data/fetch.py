@@ -1,3 +1,4 @@
+import os
 import requests
 import pandas as pd
 import time
@@ -5,10 +6,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from collections import deque
 
-API_KEYS = [
-    "eyJvcmciOiI2MmY2YTYxZDgyODM5ZjAwMDE4NmExY2EiLCJpZCI6IjRhYWZkNTY3NTA5YjRlOGU5OWJjZDVmMmQ0MGYyOTJiIiwiaCI6Im11cm11cjEyOCJ9",
-    "eyJvcmciOiI2MmY2YTYxZDgyODM5ZjAwMDE4NmExY2EiLCJpZCI6IjJiZGViYTFhZmE5ZjRjMzdhMzQzMTkyNzE5MzhlNjQ3IiwiaCI6Im11cm11cjEyOCJ9",
-]
+# Example only: MPACT_API_KEYS="EXAMPLE_KEY_1,EXAMPLE_KEY_2"
+# Provide actual credentials locally through the MPACT_API_KEYS environment variable.
+API_KEYS = [k.strip() for k in os.getenv("MPACT_API_KEYS", "").split(",") if k.strip()]
+if not API_KEYS:
+    raise RuntimeError("Set MPACT_API_KEYS to valid API credentials before running.")
 
 BASE_URL = "https://api.mcleodsoftware.com/mpact-sandbox/rates"
 

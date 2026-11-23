@@ -2,11 +2,11 @@
 
 ```text
 +-----------------------------------------------------------------------+
-|  S A M U E L   H E A D                              PORTFOLIO / 2026 |
+|  S A M U E L   H E A D                              PORTFOLIO / 2026  |
 |-----------------------------------------------------------------------|
 |  SQL  ::  POWER BI  ::  DAX  ::  POWER QUERY  ::  PYTHON              |
 |  DOMAIN   TRANSPORTATION, OPERATIONAL REPORTING, DATA QUALITY         |
-|  METHOD   MODEL -> VALIDATE -> EXPLAIN -> AUTOMATE                     |
+|  METHOD   MODEL -> VALIDATE -> EXPLAIN -> AUTOMATE                    |
 +-----------------------------------------------------------------------+
 ```
 

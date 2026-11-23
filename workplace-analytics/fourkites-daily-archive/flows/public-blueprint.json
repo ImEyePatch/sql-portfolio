@@ -1,0 +1,20 @@
+{
+  "portfolio_only": true,
+  "provider_neutral": true,
+  "flow_name": "Daily Geofence Archive (synthetic)",
+  "trigger": "shared_mailbox_new_message",
+  "required_attachment_extension": ".xls",
+  "stages": [
+    "filter_supported_attachments",
+    "terminate_if_empty",
+    "compose_report_date_and_filename",
+    "derive_year_month_and_folder_path",
+    "create_missing_year_folder",
+    "create_missing_month_folder",
+    "for_each_eligible_attachment",
+    "get_attachment_content",
+    "check_for_existing_filename",
+    "replace_existing_or_create_new_file"
+  ],
+  "excluded": ["real_mailbox", "real_sharepoint", "connector_references", "customer_and_internal_paths", "original_expressions"]
+}

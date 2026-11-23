@@ -1,0 +1,9 @@
+// CaseAudit: uniquely keyed adjudication records from v_case_match_audit.
+// ScoredEvents and CaseAudit should not be joined directly as many-to-many dimensions.
+Approved Cases = CALCULATE(DISTINCTCOUNT('CaseAudit'[case_id]), 'CaseAudit'[decision] = "approved")
+Approved Unmatched = CALCULATE(DISTINCTCOUNT('CaseAudit'[case_id]), 'CaseAudit'[match_status] = "unmatched")
+Approved Insufficient Keys = CALCULATE(DISTINCTCOUNT('CaseAudit'[case_id]), 'CaseAudit'[match_status] = "insufficient_event_key")
+Approved Ambiguous = CALCULATE(DISTINCTCOUNT('CaseAudit'[case_id]), 'CaseAudit'[match_status] = "ambiguous")
+Approved Applied = CALCULATE(DISTINCTCOUNT('CaseAudit'[case_id]), 'CaseAudit'[match_status] = "approved_unique")
+Approval Audit Coverage % = DIVIDE([Approved Applied], [Approved Cases])
+Pending Event Matched = CALCULATE(DISTINCTCOUNT('CaseAudit'[case_id]), 'CaseAudit'[match_status] = "pending_unique")

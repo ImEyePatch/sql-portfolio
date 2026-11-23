@@ -1,0 +1,5 @@
+order_id,carrier,lane,trip_id,revenue,base_carrier_cost,extra_pay,total_carrier_cost,gross_margin,gross_margin_pct,scheduled_arrival,actual_arrival,arrived_on_time,miles,planned_drive_hours,actual_drive_hours,first_issued_at,latest_acknowledged_at,rate_confirmation_count,confirmation_elapsed_hours
+O-A,Carrier North,A-B,T1,1000.0,700.0,55.0,755.0,245.0,24.5,2026-01-05 10:00,2026-01-05 10:12,1,100.0,2.5,2.6,2026-01-04 08:00,2026-01-04 09:30,1,1.5
+O-B,Carrier South,A-B,T2,1200.0,850.0,10.0,860.0,340.0,28.33,2026-01-05 12:00,2026-01-05 12:30,0,100.0,2.5,3.1,2026-01-04 08:00,2026-01-04 11:00,2,3.0
+O-C,Carrier North,B-C,T3,900.0,650.0,0,650.0,250.0,27.78,2026-01-06 14:00,,,150.0,3.0,,,,,
+O-D,Carrier East,C-D,T4,1400.0,1000.0,0,1000.0,400.0,28.57,2026-01-07 09:00,2026-01-07 08:59,1,175.0,4.0,3.9,,,,

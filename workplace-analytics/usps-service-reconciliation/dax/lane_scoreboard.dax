@@ -1,0 +1,18 @@
+// Add separately as measures. Set up LaneBenchmarks[lane] 1:* ScoredEvents[lane]
+// and put 'ScoredEvents'[event_type] on a slicer; otherwise keep arrival/departure separate.
+Lane Scored Before = [Scored Events Before]
+Lane Scored After = [Scored Events After]
+Lane Approved Excluded = [Approved Exclusions]
+Lane USPS Before % = [Before %]
+Lane USPS After % = [After %]
+Lane TMS On Time After = CALCULATE(SUM('ScoredEvents'[tms_on_time]), 'ScoredEvents'[scored_after] = 1, NOT ISBLANK('ScoredEvents'[tms_on_time]))
+Lane TMS Eligible After = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[scored_after] = 1, NOT ISBLANK('ScoredEvents'[tms_on_time]))
+Lane TMS After % = DIVIDE([Lane TMS On Time After], [Lane TMS Eligible After])
+Lane Gap (pp) = ([Lane USPS After %] - [Lane TMS After %]) * 100
+Lane Matched Loads = DISTINCTCOUNT('ScoredEvents'[load_id])
+Lane Matched Carriers = DISTINCTCOUNT('ScoredEvents'[carrier])
+// For benchmarks, the report should explicitly choose departure or arrival:
+Reported Departure % = DIVIDE(SELECTEDVALUE('LaneBenchmarks'[reported_departure_rate]),100)
+Reported Arrival % = DIVIDE(SELECTEDVALUE('LaneBenchmarks'[reported_arrival_rate]),100)
+Lane Departure Gap to Benchmark (pp) = (CALCULATE([Lane USPS After %], 'ScoredEvents'[event_type] = "departure") - [Reported Departure %]) * 100
+Lane Arrival Gap to Benchmark (pp) = (CALCULATE([Lane USPS After %], 'ScoredEvents'[event_type] = "arrival") - [Reported Arrival %]) * 100

@@ -1,0 +1,22 @@
+{
+  "portfolio_only": true,
+  "provider_neutral": true,
+  "flow_name": "Weekly Compliance Archive (synthetic)",
+  "trigger": "shared_mailbox_new_message",
+  "required_attachment_extension": ".xlsx",
+  "stages": [
+    "compose_report_date_range",
+    "derive_week_start_end",
+    "compose_archived_filename",
+    "filter_supported_attachments",
+    "terminate_if_empty",
+    "derive_year_month_and_folder_path",
+    "create_missing_year_folder",
+    "create_missing_month_folder",
+    "for_each_eligible_attachment",
+    "get_attachment_content",
+    "check_existing_filename",
+    "replace_existing_or_create_file"
+  ],
+  "excluded": ["real_mailbox", "real_sharepoint", "connector_references", "customer_and_internal_paths", "original_expressions"]
+}

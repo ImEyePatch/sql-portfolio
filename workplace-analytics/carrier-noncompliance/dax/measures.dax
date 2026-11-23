@@ -1,0 +1,22 @@
+// Add separately as measures to table 'WeeklyCompliance' after importing v_weekly_compliance.
+Eligible Loads = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[load_id]), 'WeeklyCompliance'[excluded_no_movement] = 0)
+Noncompliant Loads = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[load_id]), FILTER('WeeklyCompliance', 'WeeklyCompliance'[failure_category] <> "compliant" && 'WeeklyCompliance'[failure_category] <> "excluded_no_movement"))
+Noncompliance % = DIVIDE([Noncompliant Loads], [Eligible Loads])
+Geofence Failure Loads = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[load_id]), 'WeeklyCompliance'[geofence_failure] = 1)
+Ping Failure Loads = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[load_id]), 'WeeklyCompliance'[ping_failure] = 1)
+Excluded No Movement = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[load_id]), 'WeeklyCompliance'[excluded_no_movement] = 1)
+Affected Carriers = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[carrier]), FILTER('WeeklyCompliance', 'WeeklyCompliance'[failure_category] <> "compliant" && 'WeeklyCompliance'[failure_category] <> "excluded_no_movement"))
+Affected Lanes = CALCULATE(DISTINCTCOUNT('WeeklyCompliance'[lane]), FILTER('WeeklyCompliance', 'WeeklyCompliance'[failure_category] <> "compliant" && 'WeeklyCompliance'[failure_category] <> "excluded_no_movement"))
+// For weekly trends, use a related Date dimension and DATEADD on a complete date table.
+Noncompliant Loads Prior Week = CALCULATE([Noncompliant Loads], DATEADD('Calendar'[Date], -7, DAY))
+WoW Noncompliant Change % = DIVIDE([Noncompliant Loads] - [Noncompliant Loads Prior Week], [Noncompliant Loads Prior Week])
+Failure Share % = DIVIDE([Noncompliant Loads], CALCULATE([Noncompliant Loads], ALLSELECTED('WeeklyCompliance'[failure_category])))
+Top 5 Carriers (Noncompliance Loads) =
+VAR Carriers = ADDCOLUMNS(ALLSELECTED('WeeklyCompliance'[carrier]), "Failures", [Noncompliant Loads])
+RETURN SUMX(TOPN(5,Carriers,[Failures],DESC,'WeeklyCompliance'[carrier],ASC), [Failures])
+Top 5 Carrier Share % = DIVIDE([Top 5 Carriers (Noncompliance Loads)], CALCULATE([Noncompliant Loads], ALLSELECTED('WeeklyCompliance'[carrier])))
+Top 10 Lanes (Noncompliance Loads) =
+VAR Lanes = ADDCOLUMNS(ALLSELECTED('WeeklyCompliance'[lane]), "Failures", [Noncompliant Loads])
+RETURN SUMX(TOPN(10,Lanes,[Failures],DESC,'WeeklyCompliance'[lane],ASC), [Failures])
+Top 10 Lane Share % = DIVIDE([Top 10 Lanes (Noncompliance Loads)], CALCULATE([Noncompliant Loads], ALLSELECTED('WeeklyCompliance'[lane])))
+WoW Improvement % = -[WoW Noncompliant Change %]

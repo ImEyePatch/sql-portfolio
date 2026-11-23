@@ -1,0 +1,21 @@
+// Create separately against imported table 'OrderEconomics' at one row per order.
+Orders = DISTINCTCOUNT('OrderEconomics'[order_id])
+Revenue = SUM('OrderEconomics'[revenue])
+Carrier Base Cost = SUM('OrderEconomics'[base_carrier_cost])
+Driver Extra Pay = SUM('OrderEconomics'[extra_pay])
+Total Carrier Cost = SUM('OrderEconomics'[total_carrier_cost])
+Gross Margin = [Revenue] - [Total Carrier Cost]
+Gross Margin % = DIVIDE([Gross Margin], [Revenue])
+Average Carrier Cost = DIVIDE([Total Carrier Cost], [Orders])
+On-Time Scored Orders = CALCULATE(DISTINCTCOUNT('OrderEconomics'[order_id]), NOT ISBLANK('OrderEconomics'[arrived_on_time]))
+On-Time Orders = CALCULATE(DISTINCTCOUNT('OrderEconomics'[order_id]), 'OrderEconomics'[arrived_on_time] = 1)
+Arrival On-Time % = DIVIDE([On-Time Orders], [On-Time Scored Orders])
+Average Confirmation Hours = AVERAGE('OrderEconomics'[confirmation_elapsed_hours])
+Max Carrier Cost = MAX('OrderEconomics'[total_carrier_cost])
+Min Carrier Cost = MIN('OrderEconomics'[total_carrier_cost])
+Orders With Extra Pay = CALCULATE(DISTINCTCOUNT('OrderEconomics'[order_id]), 'OrderEconomics'[extra_pay] > 0)
+Extra Pay / Order = DIVIDE([Driver Extra Pay], [Orders])
+On-Time Delivery Loads = [On-Time Orders]
+On-Time Trip % = [Arrival On-Time %]
+Average Trip Miles = AVERAGE('OrderEconomics'[miles])
+Average Actual Drive Hours = AVERAGE('OrderEconomics'[actual_drive_hours])

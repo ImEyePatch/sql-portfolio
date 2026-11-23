@@ -1,0 +1,5 @@
+asset_id,event_at,city,region,motion_status,speed_mph,idle_hours,order_id,carrier,route,expected_return_at,business_status
+ASSET-A,2026-01-06 13:00,City B,BB,stopped,0.0,52.0,ORD-1,Demo Carrier,A-B,2026-01-10 08:00,abandon_review
+ASSET-B,2026-01-06 09:00,City C,CC,stopped,0.0,70.0,ORD-2,Demo Carrier,C-D,2026-01-05 08:00,approved_hub
+ASSET-C,2026-01-06 10:00,City D,DD,moving,30.0,0.0,,,,,out_of_network
+ASSET-D,2026-01-07 13:00,City E,EE,moving,25.0,0.0,ORD-3,Demo Carrier,D-E,2026-01-06 08:00,delayed

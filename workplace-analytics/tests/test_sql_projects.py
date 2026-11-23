@@ -1,7 +1,7 @@
 import sys
 import unittest
 from pathlib import Path
-sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'tools'))
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'python'))
 from demo_db import conn_for
 
 class TestUSPS(unittest.TestCase):

@@ -2,7 +2,7 @@ import sys
 from datetime import date
 from pathlib import Path
 import tempfile,unittest
-sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'tools'))
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'python'))
 from archive_simulator import archive_daily, archive_weekly, Attachment
 
 class TestDailyArchive(unittest.TestCase):

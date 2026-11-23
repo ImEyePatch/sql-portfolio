@@ -1,15 +1,29 @@
-# Trailer Tracking / Supplementary public-safe model
+# Trailer Tracking / Asset Status
 
-This folder complements the existing public [trailer-tracking-powerbi repository](https://github.com/ImEyePatch/trailer-tracking-powerbi). It adds executable synthetic SQLite examples for deterministic latest-event selection, as-of order matching, approved-hub logic, and operational statuses; sample DAX/M and architecture documentation.
+A small synthetic data model exploring how to combine tracking updates, active orders and hub locations into a usable asset-status view. This complements the [dedicated Trailer Tracking Power BI project](https://github.com/ImEyePatch/trailer-tracking-powerbi).
 
-Based on *structure* observed in the supplied Tracking PBIP archive, not original production source. All source names and rows are illustrative.
+## How status is determined
 
-Reproduce from package root with `python tools/generate_synthetic.py`, `python -m unittest discover -s tests -v`, or `python tools/run_query_examples.py trailer-tracking-addendum`.
+```mermaid
+flowchart LR
+ A["Provider events"] --> B["Normalize & pick latest"]
+ C["Departed orders"] --> D["As-of order match"]
+ B --> D
+ E["Known hubs"] --> F["Status rules"]
+ D --> F
+ F --> G["Asset dashboard"]
+```
 
-## Dashboard page screenshot (no data)
+This example makes latest-event selection deterministic, keeps future orders out of historical matches, and separates motion, hub and planned-return conditions. Status thresholds are illustrative.
 
-The [blank-data screenshot gallery](assets/screenshots/README.md) documents the public-safe visual layout of the trailer tracking page.
+## Dashboard preview
 
-[![Blank-data trailer tracking overview](assets/screenshots/01-trailer-tracking-overview.png)](assets/screenshots/01-trailer-tracking-overview.png)
+[![Data-cleared trailer status dashboard](assets/screenshots/01-trailer-tracking-overview.png)](assets/screenshots/README.md)
 
-**Important:** This is an edited presentation mockup with the trailer counts and table records removed. It is not a live output of the synthetic demo. Branding and report terminology should be reviewed before public release.
+[Open the report page](assets/screenshots/README.md)
+
+## Explore the implementation
+
+[Latest-state SQL](sql/10_latest_state.sql) · [DAX examples](dax/) · [Power Query example](power-query/)
+
+From `workplace-analytics/`: `python python/run_query_examples.py trailer-tracking-addendum`. Asset IDs and events are entirely fictional; the image is a layout preview.

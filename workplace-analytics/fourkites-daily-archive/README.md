@@ -1,7 +1,29 @@
-# FourKites Daily Geofence Report Archive // public workflow reconstruction
+# FourKites / Daily Report Archiving
 
-An offline, provider-neutral reproduction of an email-to-archive processing pattern observed in the daily Power Automate export. Does not connect to the original mailbox or SharePoint. Uses fictional attachments and creates a local `daily/YYYY/MM` archive.
+**One less repetitive inbox task.** This flow pattern watches for incoming reports, finds eligible daily spreadsheets and stores them in a predictable year/month archive.
 
-**Source-derived stages:** shared-mailbox trigger; XLS filter; report date; year/month folder checks; get attachment; replace/create file. **Independent implementation:** `tools/archive_simulator.py`, with path safety, deterministic write outcomes, idempotency and unit tests.
+![Visual flow of the daily report archive, from incoming email to replace or create](assets/daily-archive-flow.svg)
 
-From package root: `python -m unittest discover -s tests -v`. See `docs/flow-logic.md` and `flows/public-blueprint.json`.
+## What happens to a report?
+
+1. **An email arrives** in the reporting mailbox.
+2. **Attachments are checked.** Only `.xls` spreadsheets go forward; everything else is ignored.
+3. **The report date is used** to build its destination and filename.
+4. **Year and month folders are checked**, and missing folders are created.
+5. **Each eligible attachment is saved.** An existing filename gets replaced when its contents change; a new filename gets created. Identical content is left unchanged in the Python demo.
+
+**Example folder layout**
+
+```text
+daily/
+└── 2026/
+    └── 11/
+        ├── monday_report.xls
+        └── tuesday_report.xls
+```
+
+### Why it matters
+
+Consistent archive paths make reports easier to find and remove manual copying, missing folder steps, and repeated uploads. The branch for no matching attachments stops without creating empty archive folders.
+
+The [offline Python implementation](../python/archive_simulator.py) demonstrates filtering, safe paths, create/replace and idempotent behavior with fictional attachments. The illustration documents a workflow pattern; it is not a live Power Automate export or connected SharePoint environment.

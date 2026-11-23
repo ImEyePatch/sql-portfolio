@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Create demo data
-        run: python tools/generate_synthetic.py
+        run: python python/generate_synthetic.py
         working-directory: workplace-analytics
       - name: Test SQL and Python
         run: python -m unittest discover -s tests -v

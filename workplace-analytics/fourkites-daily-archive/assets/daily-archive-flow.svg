@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="545" viewBox="0 0 1400 545" role="img" aria-labelledby="title desc">
+<title id="title">Daily report archive workflow</title>
+<desc id="desc">A visual flow showing the email trigger, report filtering, date or week processing, archive folders, existing-file check and create or replace outcomes.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1424"/><stop offset="1" stop-color="#14213a"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#020817" flood-opacity=".3"/></filter>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5f91b4"/></marker>
+ <marker id="branchArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#70d9b5"/></marker>
+</defs>
+<rect x="0" y="0" width="1400" height="545" rx="20" fill="url(#bg)"/>
+<rect x="28" y="25" width="5" height="52" rx="2" fill="#70d9b5"/>
+<text x="48" y="48" fill="#75d9bc" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3">DAILY / AUTOMATION</text>
+<text x="48" y="83" fill="#f1f7ff" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700">Daily Geofence Report Archive</text>
+<text x="48" y="109" fill="#aec3d4" font-family="Segoe UI, Arial, sans-serif" font-size="16">A message becomes a dated, searchable file — automatically.</text><rect x="56" y="150" width="218" height="154" rx="16" fill="#192a43" stroke="#3a506b" stroke-width="1.6" filter="url(#shadow)"/>
+ <rect x="70" y="164" width="39" height="31" rx="9" fill="#1f4162"/>
+ <text x="89.5" y="186" fill="#95cbf5" font-size="15" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">01</text>
+ <text x="71" y="224" fill="#f2f7fd" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">EMAIL ARRIVES</text>
+ <text x="71" y="256" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Mailbox receives</text>
+ <text x="71" y="277" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">daily attachment</text><path d="M281 227 H315" stroke="#5f91b4" stroke-width="2.7" fill="none" marker-end="url(#arrow)"/><rect x="325" y="150" width="218" height="154" rx="16" fill="#192a43" stroke="#3a506b" stroke-width="1.6" filter="url(#shadow)"/>
+ <rect x="339" y="164" width="39" height="31" rx="9" fill="#1f4162"/>
+ <text x="358.5" y="186" fill="#95cbf5" font-size="15" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">02</text>
+ <text x="340" y="224" fill="#f2f7fd" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">FILTER FILES</text>
+ <text x="340" y="256" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Select .xls only</text>
+ <text x="340" y="277" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">ignore others</text><path d="M550 227 H584" stroke="#5f91b4" stroke-width="2.7" fill="none" marker-end="url(#arrow)"/><rect x="594" y="150" width="218" height="154" rx="16" fill="#192a43" stroke="#3a506b" stroke-width="1.6" filter="url(#shadow)"/>
+ <rect x="608" y="164" width="39" height="31" rx="9" fill="#1f4162"/>
+ <text x="627.5" y="186" fill="#95cbf5" font-size="15" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">03</text>
+ <text x="609" y="224" fill="#f2f7fd" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">REPORT DATE</text>
+ <text x="609" y="256" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Use report date</text>
+ <text x="609" y="277" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">for file placement</text><path d="M819 227 H853" stroke="#5f91b4" stroke-width="2.7" fill="none" marker-end="url(#arrow)"/><rect x="863" y="150" width="218" height="154" rx="16" fill="#192a43" stroke="#3a506b" stroke-width="1.6" filter="url(#shadow)"/>
+ <rect x="877" y="164" width="39" height="31" rx="9" fill="#1f4162"/>
+ <text x="896.5" y="186" fill="#95cbf5" font-size="15" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">04</text>
+ <text x="878" y="224" fill="#f2f7fd" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">MAKE FOLDERS</text>
+ <text x="878" y="256" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Create year/month</text>
+ <text x="878" y="277" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">if needed</text><path d="M1088 227 H1122" stroke="#5f91b4" stroke-width="2.7" fill="none" marker-end="url(#arrow)"/><rect x="1132" y="150" width="218" height="154" rx="16" fill="#192a43" stroke="#3a506b" stroke-width="1.6" filter="url(#shadow)"/>
+ <rect x="1146" y="164" width="39" height="31" rx="9" fill="#26534f"/>
+ <text x="1165.5" y="186" fill="#8af1d0" font-size="15" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">05</text>
+ <text x="1147" y="224" fill="#f2f7fd" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">FILE CHECK</text>
+ <text x="1147" y="256" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">Look for matching</text>
+ <text x="1147" y="277" fill="#acc1d6" font-family="Segoe UI, Arial, sans-serif" font-size="15">archive filename</text><path d="M434 304 V359" fill="none" stroke="#7f97ad" stroke-width="2" stroke-dasharray="6 6"/>
+<rect x="51" y="370" width="550" height="69" rx="13" fill="#202d40" stroke="#526274"/>
+<text x="72" y="399" font-family="Segoe UI, Arial, sans-serif" fill="#efc77f" font-size="17" font-weight="700">NO MATCHING SPREADSHEET?</text>
+<text x="72" y="425" font-family="Segoe UI, Arial, sans-serif" fill="#b9c8d8" font-size="15">Stop without creating empty archive folders.</text>
+<path d="M1241 304 V328 H1021 V368" stroke="#70d9b5" stroke-width="2.5" fill="none" marker-end="url(#branchArrow)"/>
+<path d="M1241 328 H1255 V368" stroke="#70d9b5" stroke-width="2.5" fill="none" marker-end="url(#branchArrow)"/>
+<rect x="900" y="370" width="235" height="69" rx="13" fill="#163e3d" stroke="#3b9785"/>
+<text x="920" y="400" font-family="Segoe UI, Arial, sans-serif" fill="#a2f5d9" font-size="17" font-weight="700">REPLACE FILE</text>
+<text x="920" y="425" font-family="Segoe UI, Arial, sans-serif" fill="#b6d7cf" font-size="14">If name exists and changed</text>
+<rect x="1150" y="370" width="201" height="69" rx="13" fill="#1e3d57" stroke="#528eb3"/>
+<text x="1168" y="400" font-family="Segoe UI, Arial, sans-serif" fill="#b5dcfa" font-size="17" font-weight="700">CREATE FILE</text>
+<text x="1168" y="425" font-family="Segoe UI, Arial, sans-serif" fill="#bdd1e2" font-size="14">If filename is new</text>
+<path d="M50 478 H1350" stroke="#34485f"/>
+<text x="50" y="507" font-family="Segoe UI, Arial, sans-serif" fill="#96adc5" font-size="15">ARCHIVE EXAMPLE</text>
+<text x="226" y="507" font-family="Consolas, Menlo, monospace" fill="#e5f4ff" font-size="15">daily/2026/11/daily_report.xls</text>
+<text x="1348" y="507" font-family="Segoe UI, Arial, sans-serif" fill="#82d5c0" font-size="13" text-anchor="end">ILLUSTRATIVE PROCESS</text></svg>

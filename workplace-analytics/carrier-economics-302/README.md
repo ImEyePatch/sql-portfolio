@@ -1,26 +1,29 @@
-# 302 / Carrier Economics & Trip Service // public reconstruction
+# 302 / Carrier Economics & Trip Performance
 
-A synthetic SQL and BI case study based on concepts found in the supplied `302(1).zip` Power BI project. **No production query, data, or customer/carrier identifier is included.**
+**Challenge:** Bring revenue, carrier cost, extra pay, trip performance and rate confirmations together without duplicating amounts when a single order has several related records.
 
-## Goal
-Analyze order-level revenue, carrier cost, extra pay, margin, service timing, and confirmation processes without accidentally multiplying finance measures when joining one-to-many source tables.
+## The key modeling decision
 
-## Included
-- Relational schema with orders, trips, driver extra pay, and rate confirmations
-- SQL order-grain aggregation, carrier scorecard, and lane profitability
-- Demonstration DAX measures and Power Query synthetic CSV loader
-- Generated synthetic inputs, automated unit tests, and technical architecture notes
+```mermaid
+flowchart LR
+  A["Orders"] --> D["One row per order"]
+  B["Extra pay lines"] --> E["Aggregate pay by order"]
+  C["Rate confirmations"] --> F["Aggregate confirmations"]
+  E --> D
+  F --> D
+  D --> G["Cost, margin & service KPIs"]
+```
 
-## Dashboard page screenshots (no data)
+The synthetic SQL pre-aggregates one-to-many sources before they join the order fact. It then demonstrates order-level margin, extra pay, carrier profitability, trip service and confirmation timing.
 
-The [302 data-cleared screenshot gallery](assets/screenshots/README.md) shows the underlying report design without disclosing shipment records, customers, lane assignments, timestamps or counts.
+## Dashboard preview
 
-[![Blank-data 302 trip service detail page](assets/screenshots/01-302-trip-service-detail.png)](assets/screenshots/01-302-trip-service-detail.png)
+[![Trip and service detail report with data removed](assets/screenshots/01-302-trip-service-detail.png)](assets/screenshots/README.md)
 
-This is a redrawn presentation mockup, not a live output of the synthetic SQL/DAX examples. Employer branding and publication rights should be reviewed before public release.
+[Open the report page](assets/screenshots/README.md)
 
-## Reproduce
-`python tools/generate_synthetic.py` and `python -m unittest discover -s tests -v` from the top-level package, or `python tools/run_query_examples.py carrier-economics-302`.
+## Explore the implementation
 
-## Engineering concern
-The model includes explicit one-to-many pre-aggregation and protects against zero-denominator margins. Sample pay and revenue figures are fictional. DAX/M examples require manual Power BI testing.
+[Order economics SQL](sql/10_economics.sql) · [Carrier and trip performance SQL](sql/20_performance.sql) · [DAX examples](dax/) · [Power Query example](power-query/)
+
+From `workplace-analytics/`: `python python/run_query_examples.py carrier-economics-302`. All money, orders, dates and thresholds in the example are fictional; the preview is a data-cleared layout rather than a live report.

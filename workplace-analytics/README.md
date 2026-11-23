@@ -1,72 +1,47 @@
-# SAMUEL HEAD // DATA SYSTEMS PORTFOLIO — RECONSTRUCTION WORKSPACE
+# Operations Analytics & Automation
 
-```text
-+--------------------------------------------------------------------------+
-|  S A M U E L  H E A D                             PUBLIC-ONLY / 2026     |
-|--------------------------------------------------------------------------|
-|  SQL SERVER  /  SQLITE  /  DAX  /  POWER QUERY  /  POWER BI /  PYTHON     |
-|  INPUT      SIX USER-SUPPLIED PROJECT EXPORTS                            |
-|  OUTPUT     SYNTHETIC REPRODUCTIONS + TESTS + CASE STUDIES               |
-|  SECURITY   NO PRODUCTION CODE OR DATA IN THIS PACKAGE                    |
-+--------------------------------------------------------------------------+
-```
+**Six case studies. Four analytics models. Two automation workflows.**
 
-This is an **independently reconstructed portfolio workspace** for six actual project *types* investigated in source archives. Each folder contains technical notes, sample data or workflow blueprints, and executable/query examples. The source files were not copied into the public workspace; actual production formulas and internal connection details are retained only in a **separately marked confidential reference**.
+A collection of projects focused on the everyday complexity of logistics operations: making service metrics trustworthy, finding tracking failures, explaining carrier economics, keeping tabs on equipment, and automating repetitive reporting tasks.
 
-## Projects
+Each analytics example includes **synthetic data and independently written SQL**, with Power BI / DAX / Power Query examples where relevant. The automation examples show the flow visually and include offline Python demonstrations.
 
-| Folder | Technical scope | Code and evidence |
+## Explore the projects
+
+| Project | Challenge | Explore |
 |---|---|---|
-| [USPS service reconciliation](usps-service-reconciliation/) | Event scoring, event-to-event comparison, unique approved exclusions, pending simulations, lane/carrier reporting | SQL + 3 DAX modules + M + data + tests |
-| [Carrier non-compliance](carrier-noncompliance/) | Weekly geofence/ping failures, no-movement exclusion, carrier/lane concentration | SQL + DAX + M + data + tests |
-| [Carrier economics (302)](carrier-economics-302/) | Order-grain financial enrichment, extra pay, rate confirmations, on-time performance | SQL + DAX + M + data + tests |
-| [Trailer tracking addendum](trailer-tracking-addendum/) | Deterministic latest event, as-of order matching, business status classification | SQL + DAX + M + data + tests |
-| [Daily report archive](fourkites-daily-archive/) | Shared-mailbox daily XLS classification, year/month archive, replace/create | Flow blueprint + offline Python + tests |
-| [Weekly report archive](fourkites-weekly-archive/) | XLSX filtering, week start/end, year/month partition, replace/create | Flow blueprint + offline Python + tests |
+| **USPS Service Reconciliation** | Match arrival/departure events, apply adjudications correctly, explain on-time performance | [View case study](usps-service-reconciliation/) |
+| **Carrier Non-Compliance** | Separate geofence and ping-frequency failures, track trends by carrier and lane | [View case study](carrier-noncompliance/) |
+| **302 Carrier Economics** | Join order, trip, extra-pay and confirmation data without inflating financial metrics | [View case study](carrier-economics-302/) |
+| **Trailer Tracking** | Normalize tracking events, select the latest status and match the right order | [View case study](trailer-tracking-addendum/) |
+| **FourKites Daily Archive** | Capture eligible daily reports and organize them by date, replacing duplicates safely | [See visual flow](fourkites-daily-archive/) |
+| **FourKites Weekly Archive** | Calculate a reporting week, name its files consistently and maintain the archive | [See visual flow](fourkites-weekly-archive/) |
 
-The existing public [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi) repository remains the deeper primary case study for that system. The tracking folder here is an additive validation example.
+## Power BI report gallery
 
-## Quick start
+These are **data-cleared presentation previews**, not screenshots of a running synthetic Power BI model.
 
-Requires **Python 3.9+**. For the SQL, synthetic data generator, and unit tests, no third-party packages, secrets, servers or paid services are needed.
+| USPS At-a-Glance | Carrier Non-Compliance |
+|---|---|
+| [![USPS dashboard layout](usps-service-reconciliation/assets/screenshots/01-at-a-glance-overview.png)](usps-service-reconciliation/assets/screenshots/README.md) | [![Carrier compliance dashboard layout](carrier-noncompliance/assets/screenshots/01-noncompliance-overview.png)](carrier-noncompliance/assets/screenshots/README.md) |
+| [6 page previews](usps-service-reconciliation/assets/screenshots/README.md) | [4 page previews](carrier-noncompliance/assets/screenshots/README.md) |
+
+| Carrier Economics (302) | Trailer Tracking |
+|---|---|
+| [![Carrier economics report layout](carrier-economics-302/assets/screenshots/01-302-trip-service-detail.png)](carrier-economics-302/assets/screenshots/README.md) | [![Trailer tracking dashboard layout](trailer-tracking-addendum/assets/screenshots/01-trailer-tracking-overview.png)](trailer-tracking-addendum/assets/screenshots/README.md) |
+| [1 page preview](carrier-economics-302/assets/screenshots/README.md) | [1 page preview](trailer-tracking-addendum/assets/screenshots/README.md) |
+
+## Run the examples
+
+**Python 3.9+**; SQL demonstrations use the built-in SQLite engine, without extra services.
 
 ```bash
-python tools/generate_synthetic.py
+cd workplace-analytics
+python python/generate_synthetic.py
 python -m unittest discover -s tests -v
-python tools/run_query_examples.py usps-service-reconciliation
-python tools/run_query_examples.py carrier-noncompliance
-python tools/run_query_examples.py carrier-economics-302
-python tools/run_query_examples.py trailer-tracking-addendum
+python python/run_query_examples.py usps-service-reconciliation
 ```
 
-The simulator for email-attachment archiving is in `tools/archive_simulator.py` and is covered by the same tests. The files inside each `power-query/` directory can be adapted to Power BI's blank-query Advanced Editor using a `pDataRoot` text parameter pointing to that project's `data/` folder. The `.dax` files are **measure blueprints**: add measures one at a time to the imported tables with matching names. They have not been run in the Power BI DAX engine.
+You can swap the last project name for `carrier-noncompliance`, `carrier-economics-302`, or `trailer-tracking-addendum`. The two archiving workflows share an [offline Python example](python/archive_simulator.py) with automated tests.
 
-## Documentation
-
-- [Source review coverage](docs/SOURCE_COVERAGE.md)
-- [Screenshot removal and redaction](docs/SCREENSHOT_REDACTION.md)
-- [Report-by-report screenshot plan](docs/REPORT_PAGE_PLANS.md)
-- [Release requirements](docs/RELEASE_CHECKLIST.md)
-- [GitHub repository rollout](docs/GITHUB_DEPLOYMENT_PLAN.md)
-- [Publication and data security policy](SECURITY.md)
-
-## What this project proves—and what it does not
-
-**Demonstrated locally:** SQL schema/view composition, synthetic dataset creation, event matching/exemption logic, week-by-week compliance calculations, join-grain protection for economics, latest/as-of asset logic, file-archive idempotency, path validation, and automated tests.
-
-**Not yet demonstrated:** successful Power BI project rebuild, tested production connections, original employer code equivalence, production deployment, original Power Automate execution history, or publication permission. Do not claim those outcomes from this reconstruction.
-
-The end result should be a recruiter-friendly GitHub portfolio, with real engineering reasoning visible in the public-safe example code. Styling is intentionally ASCII/terminal-inspired but kept restrained for readability.
-
-## No-data report gallery
-
-These are **redrawn/edited presentation mockups**, not functioning Power BI reports or production exports. All report numbers and record values were removed. Employer-associated branding, layout and terminology still require permission review.
-
-| Report | Screenshots | Focus |
-|---|---|---|
-| [USPS At-a-Glance](usps-service-reconciliation/assets/screenshots/README.md) | 6 | Network scoring, OTP tooltip, carrier performance, adjudication scenarios, lane scoreboard and reconciliation |
-| [Non-Compliance](carrier-noncompliance/assets/screenshots/README.md) | 4 | Network overview, carrier analysis, load details, flagged-load tooltip |
-| [302 Carrier Economics](carrier-economics-302/assets/screenshots/README.md) | 1 | Trip and service detail table |
-| [Trailer Tracking](trailer-tracking-addendum/assets/screenshots/README.md) | 1 | Location and status dashboard |
-
-**Total:** 12 blank-data screenshot mockups. The images illustrate page structure only; they do not validate the independently reconstructed SQL, DAX, or Power Query implementations.
+The DAX and Power Query files are **illustrative starting points**, not fully rebuilt or Power BI Desktop-validated reports. All example records are fictional. Data-cleared report designs and any employer-associated presentation elements require appropriate publication permission.

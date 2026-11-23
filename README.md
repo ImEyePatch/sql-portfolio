@@ -1,60 +1,52 @@
-# SAMUEL HEAD // DATA & BI SYSTEMS
+# Samuel Head
+**Data Analyst · BI Developer · Software & Automation Enthusiast**
 
 ```text
-+-----------------------------------------------------------------------+
-|  S A M U E L   H E A D                              PORTFOLIO / 2026 |
-|-----------------------------------------------------------------------|
-|  SQL  ::  POWER BI  ::  DAX  ::  POWER QUERY  ::  PYTHON              |
-|  DOMAIN   TRANSPORTATION, OPERATIONAL REPORTING, DATA QUALITY         |
-|  METHOD   MODEL -> VALIDATE -> EXPLAIN -> AUTOMATE                     |
-+-----------------------------------------------------------------------+
+SAMUEL HEAD / AGE 22
+SQL • POWER BI • DAX • PYTHON • AUTOMATION
+Turning complicated operations into systems people can actually use.
 ```
 
-I build data solutions where operations, business rules, and reporting meet. My work spans SQL analysis, Power BI semantic models, Power Query transformations, data validation, workflow automation, and logistics reporting.
+## A little about me
 
-## SELECTED WORK
+I'm **22 years old**, and I've been building things with computers for most of my life. I started exploring **personal software development and cybersecurity at age nine**—learning by experimenting, building projects, troubleshooting, and figuring out how systems work.
 
-| Project | What it demonstrates | Status |
-| :-- | :-- | :-- |
-| [Retail Superstore](retail_superstore/README.md) | Exploratory analysis, profitability diagnostics, Power BI, DAX | Complete portfolio case study |
-| [Freight Market](freight_market/) | API ingestion, Python data preparation, freight lane and fuel analysis | Work in progress |
-| [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi) | SQL serving patterns, telematics normalization, Power Query performance and testing | Public-safe reconstruction |
-| [Workplace Analytics // Six Reconstructions](workplace-analytics/README.md) | USPS service scoring, carrier compliance, 302 economics, trailer tracking, daily/weekly archiving | Synthetic demos; 19 SQL/Python tests; BI snippets not engine-tested |
-| [USPS Service Reconciliation](workplace-analytics/usps-service-reconciliation/) | Event matching, compliance scoring, exemption scenarios and lane performance | Synthetic reconstruction; source private |
-| [Carrier Non-Compliance Analytics](workplace-analytics/carrier-noncompliance/) | Geofence and ping-frequency exception analysis, carrier/lane drilldowns | Synthetic reconstruction; source private |
-| [FourKites Archive Automation](workplace-analytics/fourkites-daily-archive/) | Email-triggered attachment processing, date-based archive examples | Synthetic simulation; no production connectors |
+About **three years ago**, I shifted much of that curiosity toward **data analytics**. Today, I work on the problems behind operational dashboards: SQL data models, Power BI reports, exception tracking, source reconciliation, reporting performance, and repeatable automation. My logistics experience gives me a practical perspective on the people and processes these systems support.
 
-## TECHNICAL APPROACH
+I enjoy the full process: understanding a messy problem, tracing it back to the source, writing a solution, testing the edge cases, and making the result understandable to someone else.
 
-- **Data:** SQL querying, relational modeling, cleaning, explicit data grain and data-quality checks
-- **Business intelligence:** Power BI, DAX, Power Query M, dashboards and operational metrics
-- **Automation:** Python scripts, REST APIs, Power Automate and data ingestion
-- **Engineering:** migration validation, source reconciliation, diagnostics, reproducibility and documentation
+## Tools I use
 
-## WHAT TO REVIEW FIRST
+| Area | Tools & technologies |
+|---|---|
+| **Data & querying** | SQL, SQL Server, SQLite, Python, Excel |
+| **Business intelligence** | Power BI, DAX, **DAX Studio**, Power Query (M), data modeling |
+| **Automation & integration** | **Power Automate**, Python, REST APIs, scheduled reporting workflows |
+| **Software development** | **Visual Studio**, Git, GitHub, debugging and testing |
+| **AI-assisted development** | **OpenAI Codex**, used as an assistant for iteration, debugging, code review, and exploring approaches; I review and validate the resulting work |
 
-**For SQL / analysis roles:** [Retail Superstore](retail_superstore/README.md) and [Freight Market](freight_market/).
+My background in software and security started as personal experimentation; the data and BI projects below show where I've applied those skills more recently.
 
-**For BI / data engineering roles:** [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi), including its [performance benchmarks](https://github.com/ImEyePatch/trailer-tracking-powerbi/tree/main/benchmarks) and [architecture documentation](https://github.com/ImEyePatch/trailer-tracking-powerbi/tree/main/docs).
+## Featured projects
 
-## ENGINEERING PRINCIPLES
+| Project | What you'll find |
+|---|---|
+| [Operations Analytics Portfolio](workplace-analytics/) | Six connected examples covering service reconciliation, compliance, economics, trailer tracking, and file-archive automation |
+| [USPS Service Reconciliation](workplace-analytics/usps-service-reconciliation/) | Event matching, on-time metrics, adjudication scenarios, lane and carrier comparisons |
+| [Carrier Non-Compliance](workplace-analytics/carrier-noncompliance/) | Geofence/ping exceptions, carrier breakdowns, and weekly performance |
+| [302 Carrier Economics](workplace-analytics/carrier-economics-302/) | Revenue, costs, extra pay, trip service, and rate-confirmation analysis |
+| [FourKites Daily Archive](workplace-analytics/fourkites-daily-archive/) | [Visual workflow](workplace-analytics/fourkites-daily-archive/) for sorting and archiving daily email reports |
+| [FourKites Weekly Archive](workplace-analytics/fourkites-weekly-archive/) | [Visual workflow](workplace-analytics/fourkites-weekly-archive/) for weekly report processing |
+| [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi) | Telematics normalization, asset status, SQL and Power Query optimization |
+| [Retail Superstore](retail_superstore/) | Exploratory analysis, profitability and visualization |
+| [Freight Market](freight_market/) | Freight data ingestion, Python preparation, and lane analytics (in progress) |
 
-```text
-[01] DEFINE THE QUESTION     -> Who needs the answer, and why?
-[02] VERIFY THE GRAIN        -> What is one row?
-[03] RECONCILE SOURCES       -> Which records should match?
-[04] TEST THE LOGIC          -> Where can metrics silently fail?
-[05] EXPLAIN THE RESULT      -> Can another analyst maintain it?
-```
+## How I approach a problem
 
-## PUBLICATION & DATA POLICY
+**Understand the operation → inspect the data → define the business rule → build → test → make it useful.**
 
-Workplace project descriptions are high-level portfolio case studies, **not production source releases**. Employer datasets, internal paths, business identifiers, credentials, telemetry and proprietary measures are not reproduced publicly. Synthetic examples must be labeled as such.
-
-For operational projects, the documented scope and contributions should be distinguished from work that is still planned, under review, or not independently validated.
+I'm especially interested in data engineering, BI development, operations analytics, cybersecurity, and practical automation. The projects here reflect a mix of work-inspired designs and personal development. Public examples use invented datasets or data-cleared visuals rather than publishing internal records.
 
 ---
 
-[GitHub profile](https://github.com/ImEyePatch) · [Portfolio repository](https://github.com/ImEyePatch/sql-portfolio)
-
-*This repository is actively maintained. See individual projects for methodology, caveats and reproducibility.*
+[GitHub profile](https://github.com/ImEyePatch) · [Explore the six-project collection](workplace-analytics/)

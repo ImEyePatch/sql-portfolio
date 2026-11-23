@@ -1,26 +1,36 @@
-# USPS Service Reconciliation // synthetic technical reconstruction
+# USPS Service Reconciliation
 
-> **Public portfolio version.** Inspired by an internal Power BI reporting project reviewed from `Glance(9).zip`. No production query, dataset, or PBIP file is included.
+**Challenge:** Two reporting systems can disagree about the same arrival or departure. Timestamp matching, event eligibility and adjudications all affect the on-time numbers.
 
-## The business problem
-Reconcile operational arrival/departure performance across two reporting systems where mismatched event timestamps, scoring eligibility, adjudication outcomes, and lane scope can alter KPI results.
+This example reconstructs the analytical approach using fictional events and independently written SQL, DAX and Power Query examples.
 
-## What is implemented
-- SQL schema + event-reconciliation view (`sql/10_event_reconciliation.sql`)
-- Unique event-level adjudication audit (`sql/20_adjudication_audit.sql`)
-- Before/after/pending scenarios, lane scoreboards, carrier disagreements (`sql/30_kpis.sql`)
-- DAX measure blueprint, Power Query CSV import, synthetic data generator, and executable unit tests
-- Architecture and quality-gate documentation (`docs/architecture.md`)
+## How it works
 
-## Dashboard page screenshots (no data)
+```mermaid
+flowchart LR
+  A["Order & event inputs"] --> B["Event-level matching"]
+  C["Adjudication cases"] --> D["Unique-case audit"]
+  D --> B
+  B --> E["Before / after / pending KPIs"]
+  E --> F["Lane & carrier comparisons"]
+```
 
-The [six-page screenshot gallery](assets/screenshots/README.md) documents the visual design: a network overview, OTP explanation tooltip, carrier performance, adjudication scenarios, lane scoreboard, and event-level service reconciliation.
+- Match approved adjudications to **one specific event**, not every event for the same load.
+- Keep missing timestamps outside scored denominators.
+- Show the original result, approved-exclusion result and hypothetical pending-approval result separately.
+- Compare service performance by lane and carrier without hiding unmatched cases.
 
-[![Blank-data USPS-style reporting overview](assets/screenshots/01-at-a-glance-overview.png)](assets/screenshots/01-at-a-glance-overview.png)
+## Dashboard previews
 
-**Important:** These are edited presentation mockups with the metrics, dates and table records removed. They are not live outputs of the synthetic demo. Corporate branding and business-logic terminology require permission review before publishing.
+[![USPS dashboard overview with report figures cleared](assets/screenshots/01-at-a-glance-overview.png)](assets/screenshots/README.md)
 
-## Reproduce
-From the package root: `python tools/generate_synthetic.py` then `python -m unittest discover -s tests -v`. For an exploratory SQL run: `python tools/run_query_examples.py usps-service-reconciliation`.
+[Browse all 6 report pages](assets/screenshots/README.md)
 
-**Interpretation warning:** sample output is invented, so sample rates are not actual service results. DAX and Power Query files are example patterns requiring manual integration and validation in Power BI; SQL examples are executed in the test suite.
+## Explore the implementation
+
+- [Event reconciliation SQL](sql/10_event_reconciliation.sql)
+- [Adjudication matching SQL](sql/20_adjudication_audit.sql)
+- [KPI and lane views](sql/30_kpis.sql)
+- [DAX examples](dax/) · [Power Query example](power-query/)
+
+From `workplace-analytics/`: `python python/run_query_examples.py usps-service-reconciliation`. All sample events and results are invented; the DAX/M examples require Power BI validation. The dashboard preview has been cleared of operational values.

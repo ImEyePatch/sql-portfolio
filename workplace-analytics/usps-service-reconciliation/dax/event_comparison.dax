@@ -1,0 +1,8 @@
+// ScoredEvents is an event-grain table: each event_id appears exactly once.
+USPS Late Comparable = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison] = 1, 'ScoredEvents'[usps_on_time] = 0)
+TMS Late Comparable = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison] = 1, 'ScoredEvents'[tms_on_time] = 0)
+Both Late = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison] = 1, 'ScoredEvents'[usps_on_time] = 0, 'ScoredEvents'[tms_on_time] = 0)
+Postal Late / TMS On Time = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison] = 1, 'ScoredEvents'[usps_on_time] = 0, 'ScoredEvents'[tms_on_time] = 1)
+Postal On Time / TMS Late = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison] = 1, 'ScoredEvents'[usps_on_time] = 1, 'ScoredEvents'[tms_on_time] = 0)
+USPS On Time Comparable % = DIVIDE(CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison]=1, 'ScoredEvents'[usps_on_time]=1), [Comparable Events])
+TMS On Time Comparable % = DIVIDE(CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison]=1, 'ScoredEvents'[tms_on_time]=1), [Comparable Events])

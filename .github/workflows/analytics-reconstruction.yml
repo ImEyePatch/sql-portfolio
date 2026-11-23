@@ -1,0 +1,24 @@
+name: Analytics reconstruction / tests
+on:
+  push:
+    paths:
+      - 'workplace-analytics/**'
+      - '.github/workflows/analytics-reconstruction.yml'
+  pull_request:
+    paths:
+      - 'workplace-analytics/**'
+      - '.github/workflows/analytics-reconstruction.yml'
+jobs:
+  synthetic-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Create demo data
+        run: python tools/generate_synthetic.py
+        working-directory: workplace-analytics
+      - name: Test SQL and Python
+        run: python -m unittest discover -s tests -v
+        working-directory: workplace-analytics

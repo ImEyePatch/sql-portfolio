@@ -1,0 +1,64 @@
+[
+  {
+    "project": "carrier-economics-302",
+    "source_archive": "302(1).zip",
+    "kind": "PBIP",
+    "tables": 4,
+    "measures": 16,
+    "pages": 11,
+    "relationships": 14,
+    "m_queries_in_partitions": 3,
+    "named_power_query_expressions": 0,
+    "calculated_partitions": 15
+  },
+  {
+    "project": "carrier-noncompliance",
+    "source_archive": "Compliance.zip",
+    "kind": "PBIP",
+    "tables": 2,
+    "measures": 21,
+    "pages": 12,
+    "relationships": 18,
+    "m_queries_in_partitions": 2,
+    "named_power_query_expressions": 7,
+    "calculated_partitions": 19
+  },
+  {
+    "project": "usps-service-reconciliation",
+    "source_archive": "Glance(9).zip",
+    "kind": "PBIP",
+    "tables": 10,
+    "measures": 129,
+    "pages": 29,
+    "relationships": 32,
+    "m_queries_in_partitions": 9,
+    "named_power_query_expressions": 6,
+    "calculated_partitions": 30
+  },
+  {
+    "project": "trailer-tracking-addendum",
+    "source_archive": "Tracking.zip",
+    "kind": "PBIP",
+    "tables": 4,
+    "measures": 9,
+    "pages": 13,
+    "relationships": 10,
+    "m_queries_in_partitions": 1,
+    "named_power_query_expressions": 5,
+    "calculated_partitions": 14
+  },
+  {
+    "project": "fourkites-daily-archive",
+    "source_archive": "FourKitesDailyGeofenceArchive_20261122174243.zip",
+    "kind": "Power Automate",
+    "triggers": 1,
+    "actions": 22
+  },
+  {
+    "project": "fourkites-weekly-archive",
+    "source_archive": "FourKitesWeeklyComplianceArchive_20261122174203.zip",
+    "kind": "Power Automate",
+    "triggers": 1,
+    "actions": 27
+  }
+]

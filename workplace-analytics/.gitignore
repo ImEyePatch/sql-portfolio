@@ -1,0 +1,16 @@
+# Public-safe repository, synthetic data only
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pbix
+*.abf
+*.pbi
+*.pbi/
+*.zip
+*/original-*/
+*/private*/

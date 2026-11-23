@@ -19,9 +19,10 @@ I build data solutions where operations, business rules, and reporting meet. My 
 | [Retail Superstore](retail_superstore/README.md) | Exploratory analysis, profitability diagnostics, Power BI, DAX | Complete portfolio case study |
 | [Freight Market](freight_market/) | API ingestion, Python data preparation, freight lane and fuel analysis | Work in progress |
 | [Trailer Tracking Power BI](https://github.com/ImEyePatch/trailer-tracking-powerbi) | SQL serving patterns, telematics normalization, Power Query performance and testing | Public-safe reconstruction |
-| USPS Service Reconciliation | Event matching, compliance scoring, exemption scenarios and lane performance | Internal case study; documentation only pending review |
-| Carrier Non-Compliance Analytics | Geofence and ping-frequency exception analysis, carrier/lane drilldowns | Internal case study; documentation only pending review |
-| FourKites Archive Automation | Email-triggered attachment processing, date-based SharePoint archives | Internal case study; documentation only pending review |
+| [Workplace Analytics // Six Reconstructions](workplace-analytics/README.md) | USPS service scoring, carrier compliance, 302 economics, trailer tracking, daily/weekly archiving | Synthetic demos; 19 SQL/Python tests; BI snippets not engine-tested |
+| [USPS Service Reconciliation](workplace-analytics/usps-service-reconciliation/) | Event matching, compliance scoring, exemption scenarios and lane performance | Synthetic reconstruction; source private |
+| [Carrier Non-Compliance Analytics](workplace-analytics/carrier-noncompliance/) | Geofence and ping-frequency exception analysis, carrier/lane drilldowns | Synthetic reconstruction; source private |
+| [FourKites Archive Automation](workplace-analytics/fourkites-daily-archive/) | Email-triggered attachment processing, date-based archive examples | Synthetic simulation; no production connectors |
 
 ## TECHNICAL APPROACH
 

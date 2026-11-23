@@ -1,0 +1,17 @@
+// PUBLIC-SAFE SAMPLE. Expected model table: 'ScoredEvents'; do not paste as one DAX expression.
+// Create each measure separately in Power BI, then validate against SQLite fixture outputs.
+Scored Events Before = SUM('ScoredEvents'[scored_before])
+Scored Events After = SUM('ScoredEvents'[scored_after])
+On Time Before = CALCULATE(SUM('ScoredEvents'[usps_on_time]), 'ScoredEvents'[scored_before] = 1)
+On Time After = CALCULATE(SUM('ScoredEvents'[usps_on_time]), 'ScoredEvents'[scored_after] = 1)
+Before % = DIVIDE([On Time Before], [Scored Events Before])
+After % = DIVIDE([On Time After], [Scored Events After])
+Exemption Lift (pp) = ([After %] - [Before %]) * 100
+Approved Exclusions = SUM('ScoredEvents'[approved_exclusion])
+Pending Extra Exclusions = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[scored_after] = 1, 'ScoredEvents'[pending_exclusion] = 1)
+If Pending Approved Denominator = SUM('ScoredEvents'[scored_if_pending_approved])
+If Pending Approved On Time = CALCULATE(SUM('ScoredEvents'[usps_on_time]), 'ScoredEvents'[scored_if_pending_approved] = 1)
+If Pending Approved % = DIVIDE([If Pending Approved On Time], [If Pending Approved Denominator])
+Comparable Events = CALCULATE(COUNTROWS('ScoredEvents'), 'ScoredEvents'[eligible_for_comparison] = 1)
+Different Verdicts = CALCULATE(COUNTROWS('ScoredEvents'), FILTER('ScoredEvents', 'ScoredEvents'[eligible_for_comparison] = 1 && 'ScoredEvents'[usps_on_time] <> 'ScoredEvents'[tms_on_time]))
+Disagreement % = DIVIDE([Different Verdicts], [Comparable Events])

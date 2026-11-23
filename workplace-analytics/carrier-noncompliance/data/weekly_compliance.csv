@@ -1,0 +1,9 @@
+snapshot_id,week_start,load_id,carrier,lane,ping_interval_min,geofence_stops_expected,geofence_stops_detected,excluded_no_movement,geofence_failure,ping_failure,failure_category
+S01,2026-01-05,LOAD-A,Carrier North,A-B,10,2,2,0,0,0,compliant
+S02,2026-01-05,LOAD-B,Carrier North,A-B,50,3,1,0,1,1,both
+S03,2026-01-05,LOAD-C,Carrier South,B-C,10,2,0,1,0,0,excluded_no_movement
+S04,2026-01-05,LOAD-D,Carrier East,C-D,50,2,2,0,0,1,ping_frequency
+S05,2026-01-12,LOAD-A,Carrier North,A-B,5,2,2,0,0,0,compliant
+S09,2026-01-12,LOAD-B,Carrier North,A-B,45,3,1,0,1,1,both
+S07,2026-01-12,LOAD-E,Carrier South,B-C,10,3,3,0,0,0,compliant
+S08,2026-01-12,LOAD-F,Carrier East,C-D,,2,2,0,0,1,ping_frequency

@@ -1,0 +1,10 @@
+// Public synthetic demo; add each separately to an imported table 'AssetStatus'.
+Total Assets = DISTINCTCOUNT('AssetStatus'[asset_id])
+Delayed Assets = CALCULATE(DISTINCTCOUNT('AssetStatus'[asset_id]), 'AssetStatus'[business_status] = "delayed")
+Out of Network = CALCULATE(DISTINCTCOUNT('AssetStatus'[asset_id]), 'AssetStatus'[business_status] = "out_of_network")
+Idle Review = CALCULATE(DISTINCTCOUNT('AssetStatus'[asset_id]), 'AssetStatus'[business_status] = "abandon_review")
+Approved Hub = CALCULATE(DISTINCTCOUNT('AssetStatus'[asset_id]), 'AssetStatus'[business_status] = "approved_hub")
+OK Assets = CALCULATE(DISTINCTCOUNT('AssetStatus'[asset_id]), 'AssetStatus'[business_status] = "ok")
+Delayed % = DIVIDE([Delayed Assets], [Total Assets])
+Status Count Check = [Delayed Assets] + [Out of Network] + [Idle Review] + [Approved Hub] + [OK Assets]
+Status Coverage % = DIVIDE([Status Count Check], [Total Assets])

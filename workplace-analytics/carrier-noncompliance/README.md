@@ -22,4 +22,4 @@ The [four-page screenshot gallery](assets/screenshots/README.md) shows the origi
 
 [![Non-compliance overview with KPI values and data removed](assets/screenshots/01-noncompliance-overview.png)](assets/screenshots/01-noncompliance-overview.png)
 
-Review employer approval before publishing any branded screenshots or business-rule descriptions.
+
